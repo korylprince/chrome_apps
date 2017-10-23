@@ -9,17 +9,15 @@ document.querySelector("input[type='submit']").removeAttribute("disabled");
 document.querySelector("input[type='submit']").addEventListener("click", function(ev) {
     //prevent form submission
     ev.preventDefault();
-    //copy credentials from pre-filled fields if non-empty
-    var username = document.querySelector("input[name='hidden_username']").value;
-    var password = document.querySelector("input[name='hidden_password']").value;
-    if (username) {
-        document.querySelector("input[name='j_username']").value = username;
+    var hidden_password = document.querySelector("input[name='hidden_password']").value;
+    var visible_password = document.querySelector("input[name='j_password']").value;
+    //if hidden password is non-empty and visible password is empty
+    if (hidden_password && !visible_password) {
+        //enable password field
+        document.querySelector("input[name='j_password']").removeAttribute("disabled");
+        //copy hidden password to visible one 
+        document.querySelector("input[name='j_password']").value = hidden_password;
     }
-    if (password) {
-        document.querySelector("input[name='j_password']").value = password;
-    }
-    //enable password field
-    document.querySelector("input[name='j_password']").removeAttribute("disabled");
     //submit form
     document.querySelector("#login_form").submit();
 });
