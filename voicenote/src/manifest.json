@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "VoiceNote II",
+    "description": "Typing with your voice and speech recognition. Simple and functional notepad.",
+    "version": "1.0",
+    "update_url": "https://korylprince.github.io/chrome_apps/voicenote/update.xml",
+    "permissions": [
+        "audioCapture",
+        "notifications",
+        "unlimitedStorage",
+        "webview",
+        "https://google.com/",
+        "https://voicenote.in/"
+    ],
+    "icons": {
+        "16": "icon16.png",
+        "24": "icon24.png",
+        "32": "icon32.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+    "kiosk_enabled": true,
+    "app": {
+        "background": {
+            "scripts": [ "background.js" ],
+            "persistent": false
+        }
+    }
+}
