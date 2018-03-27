@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "VoiceNote II",
     "description": "Typing with your voice and speech recognition. Simple and functional notepad.",
-    "version": "1.0",
+    "version": "1.1",
     "update_url": "https://korylprince.github.io/chrome_apps/voicenote/update.xml",
     "permissions": [
         "audioCapture",
