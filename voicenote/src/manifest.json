@@ -25,5 +25,13 @@
             "scripts": [ "background.js" ],
             "persistent": false
         }
+    },
+    "webview": {
+        "partitions": [
+            {
+                "name": "app",
+                "accessible_resources": ["print.css"]
+            }
+        ]
     }
 }

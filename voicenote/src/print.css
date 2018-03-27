@@ -1,0 +1,28 @@
+@media print {
+    html, body {
+        overflow: scroll !important;
+    }
+
+    body:before {
+        box-shadow: none !important;
+    }
+
+    #v_box {
+        position: fixed !important;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100% !important;
+        height: 100% !important;
+        z-index: 100;
+    }
+
+    #v_box:before, #v_box:after {
+        box-shadow: none;
+    }
+
+    #v_box tbody tr:first-child, #v_box tbody tr:nth-child(2) {
+        display: none;
+    }
+}

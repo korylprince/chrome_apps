@@ -21,6 +21,7 @@ chrome.app.runtime.onLaunched.addListener(function() {
             var webview = this.querySelector('#root');
             webview.request.onBeforeRequest.addListener(callback, filter, opt_extraInfoSpec);
             webview.addEventListener('contentload', function() {
+                webview.insertCSS({file: "print.css"});
                 webview.executeScript({code: 'document.title'}, function(results) {
                     window.contentWindow.document.title = results[0];
                 });
@@ -28,6 +29,9 @@ chrome.app.runtime.onLaunched.addListener(function() {
             webview.addEventListener("permissionrequest", function(e) {
                 if (e.permission === "media") {
                     e.request.allow();
+                }
+                if (e.permission === "download") {
+                    webview.print();
                 }
             });
         });
