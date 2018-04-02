@@ -5,6 +5,12 @@ window.setTimeout(function() {
 
 //enable button
 document.querySelector("input[type='submit']").removeAttribute("disabled");
+
+//replace form to remove event listeners
+var old = document.querySelector("form");
+var clone = old.cloneNode(true);
+old.parentNode.replaceChild(clone, old);
+
 //set button click handler
 document.querySelector("input[type='submit']").addEventListener("click", function(ev) {
     //prevent form submission
