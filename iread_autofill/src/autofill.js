@@ -6,13 +6,18 @@ window.setTimeout(function() {
 //enable button
 document.querySelector("input[type='submit']").removeAttribute("disabled");
 
-//replace form to remove event listeners
-var old = document.querySelector("form");
-var clone = old.cloneNode(true);
-old.parentNode.replaceChild(clone, old);
+//add button
+var but = document.createElement("input");
+but.id = "signInButton";
+but.type = "button";
+but.setAttribute("style", "background: url(./images/signIn_up.png) no-repeat; cursor: pointer; border: none; width: 127px; height: 44px;");
+document.querySelector("input[type='submit']").parentNode.append(but);
+
+//remove old button
+document.querySelector("input[type='submit']").parentNode.removeChild(document.querySelector("input[type='submit']"));
 
 //set button click handler
-document.querySelector("input[type='submit']").addEventListener("click", function(ev) {
+document.querySelector("#signInButton").addEventListener("click", function(ev) {
     //prevent form submission
     ev.preventDefault();
     var hidden_password = document.querySelector("input[name='hidden_password']").value;
