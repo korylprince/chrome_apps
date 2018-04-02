@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "iRead Autofill",
     "description": "Autofills iRead credentials",
-    "version": "1.3",
+    "version": "1.4",
     "update_url": "https://korylprince.github.io/chrome_apps/iread_autofill/update.xml",
     "permissions": ["*://idp-awsprod1.education.scholastic.com/idp/*"],
     "icons": {
