@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "COVID-19 Check-in",
     "description": "COVID-19 Check-in station",
-    "version": "1.2",
+    "version": "1.0.0",
     "update_url": "https://korylprince.github.io/chrome_apps/covid-check/update.xml",
     "permissions": [
         "webview",
