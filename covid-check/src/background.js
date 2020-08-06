@@ -11,7 +11,7 @@ chrome.app.runtime.onLaunched.addListener(function() {
             }
             chrome.storage.managed.get("location_id", data => {
                 if (data.location_id != null) {
-                    webview.src = `https://covid-check.bullardisd.net/client?location_id=${data.location_id}`
+                    webview.src = `https://covid-check.bullardisd.net/client/?location_id=${data.location_id}`
                     return
                 }
                 body.innerHTML = "<h1>location_id not set. Please contact your system administrator.</h1>"
