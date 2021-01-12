@@ -82,7 +82,11 @@ def generate_app(app):
 
     #copy src files
     for f in glob.glob(os.path.join(app, "src/*")):
-        if "icon.png" not in f:
+        if "icon.png" in f:
+            continue
+        if os.path.isdir(f):
+            shutil.copytree(f, os.path.join(app, "dist", os.path.basename(f)))
+        else:
             shutil.copy(f, os.path.join(app, "dist"))
 
    #generate icons
